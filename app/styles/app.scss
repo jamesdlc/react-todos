@@ -1,5 +1,10 @@
 @import "base/variables";
 
+//components
+@import "components/main-title";
+@import "components/todo";
+@import "components/container";
+
 //Foundation
 @import "base/foundation-settings";
 @import "foundation";

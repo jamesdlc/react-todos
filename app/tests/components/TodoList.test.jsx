@@ -25,10 +25,18 @@ describe('TodoList', () => {
 
     var todoList = TestUtils.renderIntoDocument(<TodoList todos={todos} />);
 
-    // creates an array of components rendered 
+    // creates an array of components rendered
     var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, Todo);
 
     expect(todosComponents.length).toBe(todos.length);
 
+  });
+
+  it('should render default message if no todos', () => {
+    var todos = [];
+    var todoList = TestUtils.renderIntoDocument(<TodoList todos={todos} />);
+    var $el = $(ReactDOM.findDOMNode(todoList));
+
+    expect($el.find('.container__message').length).toBe(1);
   });
 });
